@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мини-редактор изображений</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Мини-редактор изображений</h1>
+
+  <div class="app">
+    <div class="panel">
+      <label class="btn">
+        Загрузить фото
+        <input type="file" id="fileInput" accept="image/*" hidden>
+      </label>
+
+      <label>Яркость: <span id="brightnessValue">0</span></label>
+      <input type="range" id="brightness" min="-100" max="100" value="0">
+
+      <label>Контраст: <span id="contrastValue">0</span></label>
+      <input type="range" id="contrast" min="-100" max="100" value="0">
+
+      <label>Размытие: <span id="blurValue">0</span></label>
+      <input type="range" id="blur" min="0" max="5" value="0">
+
+      <label class="check">
+        <input type="checkbox" id="gray"> Чёрно-белое
+      </label>
+
+      <button id="resetBtn" class="btn">Сбросить</button>
+      <button id="saveBtn" class="btn">Сохранить PNG</button>
+    </div>
+    <div class="view">
+      <canvas id="canvas" width="600" height="400"></canvas>
+      <p id="hint">Выберите изображение с компьютера</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
